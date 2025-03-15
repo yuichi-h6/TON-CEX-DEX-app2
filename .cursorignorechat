@@ -1,0 +1,14 @@
+.env
+.env*
+.env.* 
+*.pem
+**/credentials/*
+secrets.json
+**/secrets/*
+*_rsa
+*_dsa
+*.key
+*.pgp
+*.asc
+*.p12
+*.pfx 

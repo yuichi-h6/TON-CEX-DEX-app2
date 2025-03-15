@@ -1,0 +1,54 @@
+swap手数料 約0.16ドル程度
+
+50ドルで1パーの乖離率だと、
+50 * 0.01 - 0.16 = 0.34ドル
+100ドルで1パーの乖離率だと、
+100 * 0.01 - 0.16 = 0.84ドル
+
+
+
+
+
+EQCx0HDJ_DxLxDSQyfsEqHI8Rs65nygvdmeD9Ra7rY15OWN8
+EQCxkYVQcfXKw9uJ-MMtutvR2Cu0DVCZFfLNBp6NwXgO8vQY
+
+{
+  "offer_address": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
+  "ask_address": "EQA3AshPEVly8wQ6mZincrKC_CkJSKXqqjyg0VMsVjF_CATS",
+  "offer_jetton_wallet": "EQCwZNEWDvQFcUdFTvCuDugTGsAvPz1tta65r8h5eXITkeoJ",
+  "ask_jetton_wallet": "EQB9mTq847w-EmFbbip90jd3pqtddTQJflQiaxAzJ3lnlNSJ",
+  "router_address": "EQCx0HDJ_DxLxDSQyfsEqHI8Rs65nygvdmeD9Ra7rY15OWN8",
+  "pool_address": "EQChmDmX30xu2c0oMWwszaev9bmjqe74_XnI8n0wX9cHiDjt",
+  "offer_units": "300",
+  "ask_units": "44659105089",
+  "slippage_tolerance": "0.001",
+  "min_ask_units": "44614445983",
+  "swap_rate": "148863.683630000",
+  "price_impact": "0.000000033",
+  "fee_address": "EQA3AshPEVly8wQ6mZincrKC_CkJSKXqqjyg0VMsVjF_CATS",
+  "fee_units": "44703809",
+  "fee_percent": "0.001000000"
+}
+
+
+{
+    "offer_address": "EQA3AshPEVly8wQ6mZincrKC_CkJSKXqqjyg0VMsVjF_CATS",
+    "ask_address": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
+    "offer_jetton_wallet": "EQCMPfl9thbdNrThBsV1wXT2iWUwgtrKRVMxJRDMSahQapBc",
+    "ask_jetton_wallet": "EQCz-IZ-8EnYi7rgsSrkPuUTvSqdVh1Fa2IKDk8Hxsz_tTvr",
+    "router_address": "EQCxkYVQcfXKw9uJ-MMtutvR2Cu0DVCZFfLNBp6NwXgO8vQY",
+    "pool_address": "EQCy3y29VRcji75nJrY2SKzf-Vttgqzeno7cZVKVPWwgDvG2",
+    "offer_units": "300",
+    "ask_units": "0",
+    "slippage_tolerance": "0.001",
+    "min_ask_units": "0",
+    "swap_rate": "0.000000000",
+    "price_impact": "0.000068470",
+    "fee_address": "EQCxE6mUtQJKFnGfaROTKOt1lZbDiiX1kCixRv7Nw2Id_sDs",
+    "fee_units": "1",
+    "fee_percent": "1.000000000"
+  }
+
+
+  EQCx0HDJ_DxLxDSQyfsEqHI8Rs65nygvdmeD9Ra7rY15OWN8
+  EQCxkYVQcfXKw9uJ-MMtutvR2Cu0DVCZFfLNBp6NwXgO8vQY
