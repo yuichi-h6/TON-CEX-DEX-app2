@@ -15,8 +15,8 @@ export const CONFIG = {
   DEX_V2: "true",
   DIFF_JST_FROM_UTC: 9,
   CSV_FILES: {
-    OPPORTUNITIES: 'Data/Stonfi_Mexc_arbitrage_both_opportunities.csv',
-    ANALYSIS: 'Data/Stonfi_Mexc_both_analysis_data.csv'
+    OPPORTUNITIES: 'data/Stonfi_Mexc_arbitrage_both_opportunities.csv',
+    ANALYSIS: 'data/Stonfi_Mexc_both_analysis_data.csv'
   },
   // MNEMONIC: process.env.MNEMONIC_STONFI || "",
   // WALLET_ADDRESS: process.env.WALLET_ADDRESS_STONFI_BASE64 || "",
