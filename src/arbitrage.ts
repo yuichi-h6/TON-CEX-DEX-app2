@@ -233,28 +233,27 @@ export class ArbitrageBot {
 
         // Stonfi Swap USDTをpair.symbol_tokenに交換
         console.log('stonfi swap実行')
-        // const stonfi_amount_out_min = Math.floor(stonfi_amount_out);
-        if (price_diff_percent >= 5) {
-          slippage = 0.98; // 収益率 1%未満はスリッページを0.5%に抑える
+        if (price_diff_percent >= 5) {  
+          slippage = 0.98;
         }
-        const stonfi_amount_out_min = Math.floor(stonfi_amount_out*slippage);
-        console.log(`最小出力量: ${stonfi_amount_out_min}`) 
+        const stonfi_amount_out_min = Number((stonfi_amount_out * slippage).toFixed(6));
+        const mexc_amount_out_buy_fixed = Number(mexc_amount_out.toFixed(6));
 
+        console.log(`最小出力量: ${stonfi_amount_out_min}`)  
+        console.log(`最小出力量_Decimal: ${Math.floor(stonfi_amount_out_min * Math.pow(10, CONFIG.DECIMAL_USDT_NORMAL))}`)
+        console.log(`購入数量_Decimal_mexc: ${Math.floor(mexc_amount_out_buy_fixed * Math.pow(10, pair.decimals_token))}`)
+        
         const swapResult = await sendSwap_v2({
           wallet: return_keyPair.wallet,
           keyPair: return_keyPair.keyPair,
           rounterVersion: pair.routerVersion,
           userwalletAddress: return_keyPair.walletAddress,
           routerAddress: router_address,
-          // routerAddress: pair.routerAddress,
           offerJettonAddress: pair.offer_address,
-          offerAmount: BigInt(Math.floor(amount_usdt * CONFIG.DECIMAL_USDT)),
-          // offerAmount: BigInt(Math.floor(amount_usdt_test * CONFIG.DECIMAL_USDT)),
+          offerAmount: Number(Math.floor(mexc_amount_out_buy_fixed * Math.pow(10, pair.decimals_token))),
           askJettonAddress: pair.ask_address,
-          // minAskAmount: Math.floor(stonfi_amount_out_min*0.99),
-          minAskAmount: BigInt(Math.floor(stonfi_amount_out_min * Math.pow(10, pair.decimals_token))) ,
-          // minAskAmount: stonfi_amount_out_min,
-          queryId: Date.now() //12345
+          minAskAmount: Number(Math.floor(stonfi_amount_out_min * Math.pow(10, CONFIG.DECIMAL_USDT_NORMAL))),
+          queryId: Date.now()
         });
 
         if (swapResult["@type"] !== "ok") {
@@ -516,17 +515,15 @@ export class ArbitrageBot {
 
         // Stonfi Swap TokenをUSDTに交換
         console.log('stonfi swap実行')
-        // const stonfi_amount_out_min = Math.floor(stonfi_amount_out);
         if (price_diff_percent >= 5) {  
-          slippage = 0.98; // 収益率 1%未満はスリッページを0.5%に抑える
+          slippage = 0.98;
         }
-        // const stonfi_amount_out_min = Math.floor(stonfi_amount_out_opposite*slippage);
-        const stonfi_amount_out_min = Number((stonfi_amount_out_opposite * slippage));
-        // const mexc_amount_out_buy_min = Number((mexc_amount_out_buy * slippage).toFixed(2));
+        const stonfi_amount_out_min = Number((stonfi_amount_out_opposite * slippage).toFixed(6));
+        const mexc_amount_out_buy_fixed = Number(mexc_amount_out_buy.toFixed(6));
 
         console.log(`最小出力量: ${stonfi_amount_out_min}`)  
-        console.log(`最小出力量_Decimal: ${BigInt(Math.floor(stonfi_amount_out_min * Math.pow(10, CONFIG.DECIMAL_USDT_NORMAL)))}`)
-        console.log(`購入数量_Decimal_mexc: ${BigInt(Math.floor(mexc_amount_out_buy * Math.pow(10, pair.decimals_token)))}`)
+        console.log(`最小出力量_Decimal: ${Math.floor(stonfi_amount_out_min * Math.pow(10, CONFIG.DECIMAL_USDT_NORMAL))}`)
+        console.log(`購入数量_Decimal_mexc: ${Math.floor(mexc_amount_out_buy_fixed * Math.pow(10, pair.decimals_token))}`)
 
         // return;
         
@@ -536,13 +533,11 @@ export class ArbitrageBot {
           rounterVersion: pair.routerVersion_opposite,
           userwalletAddress: return_keyPair.walletAddress,
           routerAddress: router_address_opposite,
-          // routerAddress: pair.routerAddress_opposite,
           offerJettonAddress: pair.ask_address,
-          offerAmount: BigInt(Math.floor(mexc_amount_out_buy * Math.pow(10, pair.decimals_token))),
+          offerAmount: Number(Math.floor(mexc_amount_out_buy_fixed * Math.pow(10, pair.decimals_token))),
           askJettonAddress: pair.offer_address,
-          minAskAmount: BigInt(Math.floor(stonfi_amount_out_min * Math.pow(10, CONFIG.DECIMAL_USDT_NORMAL))),
-          // minAskAmount: 0,  
-          queryId: Date.now() //12345
+          minAskAmount: Number(Math.floor(stonfi_amount_out_min * Math.pow(10, CONFIG.DECIMAL_USDT_NORMAL))),
+          queryId: Date.now()
         });
       
         if (swapResult["@type"] !== "ok") {
