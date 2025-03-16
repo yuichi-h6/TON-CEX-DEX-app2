@@ -1,3 +1,10 @@
+# add private
+data/
+.env*
+.env.*
+
+
+
 # Logs
 logs
 *.log
