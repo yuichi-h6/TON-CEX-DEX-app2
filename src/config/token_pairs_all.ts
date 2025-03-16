@@ -31,6 +31,8 @@ export const TOKEN_PAIRS_USDT: TokenPair[] = [
     ask_address: "EQD-cvR0Nz6XAyRBvbhz-abTrRC6sI5tvHvvpeQraV9UAAD7",    // CATI
     routerAddress: "EQB3ncyBUTjZUA5EnFKR5_EnOMI9V1tTEAAPaiU71gc4TiUt", // 
     routerVersion: "v1",
+    routerAddress_opposite: "EQB3ncyBUTjZUA5EnFKR5_EnOMI9V1tTEAAPaiU71gc4TiUt", // CATI -> USDT
+    routerVersion_opposite: "v1",
     symbol_token: "CATI",
     decimals_token: 9,
     tradeExecute: true,    
@@ -93,6 +95,8 @@ export const TOKEN_PAIRS_USDT: TokenPair[] = [
     ask_address: "EQCuPm01HldiduQ55xaBF_1kaW_WAUy5DHey8suqzU_MAJOR",    // MAJOR
     routerAddress: "EQAyD7O8CvVdR8AEJcr96fHI1ifFq21S8QMt1czi5IfJPyfA", // 
     routerVersion: "v2_1",
+    routerAddress_opposite: "EQAyD7O8CvVdR8AEJcr96fHI1ifFq21S8QMt1czi5IfJPyfA", // MAJOR -> USDT
+    routerVersion_opposite: "v2_1",
     symbol_token: "MAJOR",
     decimals_token: 9,
     tradeExecute: true,
