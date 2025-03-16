@@ -444,7 +444,8 @@ export class ArbitrageBot {
       console.log(`収益: ${profit_opposit.toFixed(2)}`);
       console.log(`収益率: ${price_diff_percent_opposit.toFixed(2)}%`);
 
-      if (price_diff_percent_opposit >= arb_threshold) {
+      // if (price_diff_percent_opposit >= arb_threshold) {
+      if (price_diff_percent_opposit >= -0.3) {
 
           const timestamp_opposit = this.getTimestamp();
   
