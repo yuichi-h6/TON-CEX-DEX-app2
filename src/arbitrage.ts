@@ -535,9 +535,9 @@ export class ArbitrageBot {
           userwalletAddress: return_keyPair.walletAddress,
           routerAddress: router_address_opposite,
           offerJettonAddress: pair.ask_address,
-          offerAmount: Number(Math.floor(mexc_amount_out_buy_fixed * Math.pow(10, pair.decimals_token))),
+          offerAmount: BigInt(Math.floor(mexc_amount_out_buy_fixed * Math.pow(10, pair.decimals_token))),
           askJettonAddress: pair.offer_address,
-          minAskAmount: Number(Math.floor(stonfi_amount_out_min * Math.pow(10, CONFIG.DECIMAL_USDT_NORMAL))),
+          minAskAmount: BigInt(Math.floor(stonfi_amount_out_min * Math.pow(10, CONFIG.DECIMAL_USDT_NORMAL))),
           queryId: Date.now()
         });
       
