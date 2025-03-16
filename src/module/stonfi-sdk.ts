@@ -308,6 +308,15 @@ export async function sendSwap_v2(
         let txParams;
         let router;
 
+        // デバッグ情報の出力
+        console.error("=== Swap Debug Info ===");
+        console.error("Router Version:", params.rounterVersion);
+        console.error("Router Address:", params.routerAddress);
+        console.error("Offer Token:", params.offerJettonAddress);
+        console.error("Ask Token:", params.askJettonAddress);
+        console.error("Offer Amount:", params.offerAmount);
+        console.error("Min Ask Amount:", params.minAskAmount);
+
         if (params.askJettonAddress === 'UQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJKZ') {
             console.log('Tonトークンのtx作成');
             if (params.rounterVersion === 'v1') {
@@ -368,7 +377,7 @@ export async function sendSwap_v2(
         }
         
 
-        console.log('Transaction parameters:', txParams);
+        console.error("Generated txParams:", JSON.stringify(txParams, null, 2));
 
         const transferSended_swapv2 = await params.wallet.methods
             .transfer({
@@ -383,12 +392,15 @@ export async function sendSwap_v2(
             })
             .send();
 
-        console.log('Transfer Sended:', transferSended_swapv2);
+        console.error("Transfer Result:", JSON.stringify(transferSended_swapv2, null, 2));
         return transferSended_swapv2;
 
     }
     catch (error) {
-        console.error('送金エラー:', error);
+        console.error("=== Swap Error Details ===");
+        console.error("Error message:", error.message);
+        console.error("Error stack:", error.stack);
+        console.error("Full error object:", JSON.stringify(error, Object.getOwnPropertyNames(error), 2));
         return error;
     }
 }
